@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  bitcoind1:
+    image: kylemanna/bitcoind
+    ports:
+      - "8334:8334"
+      - "18446:18446"
+    volumes:
+      - ./bitcoin/mybitcoin.conf:/bitcoin/.bitcoin/bitcoin.conf
+    command: [ "-port=18446", "-rpcport=8334", "--regtest=1","-rpcbind=0.0.0.0" ]
+    networks:
+      - bitcoin_network
+
+  bitcoind2:
+    image: kylemanna/bitcoind
+    ports:
+      - "8333:8333"
+      - "18444:18444"
+    volumes:
+      - ./bitcoin/mybitcoin.conf:/bitcoin/.bitcoin/bitcoin.conf
+    command: [ "-port=18444", "-rpcport=8333", "--regtest=1","-rpcbind=0.0.0.0" ]
+    networks:
+      - bitcoin_network
+  ckb:
+    image: nervos/ckb:v0.115.0
+    user: root
+    ports:
+      - 8114:8114   # rpc
+    volumes:
+      - ./ckb:/var/lib/ckb
+    command: [ "run", "-C", "/var/lib/ckb" ]
+    networks:
+      - bitcoin_network
+
+  ckb-miner:
+    image: nervos/ckb:v0.115.0
+    user: root
+    volumes:
+      - ./ckb:/var/lib/ckb
+    command: [ "miner" ]
+    networks:
+      - bitcoin_network
+
+networks:
+  bitcoin_network:
+    driver: bridge
