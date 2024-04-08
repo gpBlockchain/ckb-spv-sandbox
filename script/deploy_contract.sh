@@ -2,7 +2,7 @@
 echo "deploy can-update-without-ownership-lock"
 
 CKB_ENDPOINT="http://localhost:8114"
-KEY_FILE="/Users/guopenglin/RustroverProjects/nervosnetwork/ckb-bitcoin-spv-service/target/debug/output.bin"
+KEY_FILE="./script/output.bin"
 CKB_BITCOIN_SPV_TYPE_LOCK_PATH="./contracts/ckb-bitcoin-spv-type-lock"
 CKB_CAN_UPDATE_LOCK_PATH="./contracts/can-update-without-ownership-lock"
 CONTRACT_OWNER="ckt1qq5wswsjwl2g4hvwwtad42fys4v7rd3jh2et6c9j0927h3xq8qq22qsrd2tlg"

@@ -11,4 +11,4 @@ cd ../
 echo "tar ckb data"
 cd ../
 cd ckb
-tar -zxvf data.ta.gz
+tar -zxvf data.tar.gz

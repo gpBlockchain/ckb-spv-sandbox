@@ -11,7 +11,7 @@ LOCK_CONTRACT_DATA_HASH=${LOCK_CONTRACT_DATA_HASH}
 LOCK_CONTRACT_OUT_POINT=${LOCK_CONTRACT_OUT_POINT}
 
 CKB_ENDPOINT="http://localhost:8114"
-KEY_FILE="/Users/guopenglin/RustroverProjects/nervosnetwork/ckb-bitcoin-spv-service/target/debug/output.bin"
+KEY_FILE="./script/output.bin"
 
 SPV_OWNER="ckt1qrenum4xaek97sc53rkdqumvan9xxvr43se9e7dnk455t5sysfn7jqsqfsd67w"
 DATA_DIR="./tmp/data5"
