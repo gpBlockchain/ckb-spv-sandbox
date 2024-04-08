@@ -12,3 +12,5 @@ echo "tar ckb data"
 cd ../
 cd ckb
 tar -zxvf data.tar.gz
+echo "install python "
+pip install python-dotenv

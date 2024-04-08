@@ -1,0 +1,27 @@
+name: CI
+on:
+  push:
+    branches: [ master, develop, release/* ]
+  pull_request:
+    branches: [ master, release/* ]
+defaults:
+  run:
+    shell: bash
+env:
+  CARGO_TERM_COLOR: always
+  RUST_TOOLCHAIN: 1.76.0
+
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest  # 可以根据您的需求选择不同的操作系统环境
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: make build
+
+      - name: Unit Testing
+        run: make test
