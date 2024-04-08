@@ -1,4 +1,4 @@
-name = "ckb_testnet"
+name = "ckb_dev"
 
 [genesis]
 version = 0
