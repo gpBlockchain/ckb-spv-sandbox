@@ -9,7 +9,6 @@ cd ../
 #cd ckb-spv-monit
 #cargo build
 echo "tar ckb data"
-cd ../
 cd ckb
 tar -zxvf data.tar.gz
 echo "install python "
