@@ -21,7 +21,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build
-        run: make build
+        run: |
+          bash script/prepare.sh
 
       - name: Unit Testing
-        run: make test
+        run: |
+          bash script/start_node.sh
+          bash script/deploy_contract.sh
+          bash script/start_spv_server.sh > spv.log 2>&1 &
+          python script/reorg.py
