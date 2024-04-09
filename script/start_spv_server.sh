@@ -38,7 +38,7 @@ set -e
         --spv-owner                 "${SPV_OWNER}" \
         --key-file                  "${KEY_FILE}" --disable-difficulty-check
 
-sleep 10
+sleep 20
 echo "start spv server"
 
 ./ckb-bitcoin-spv-service/target/debug/ckb-bitcoin-spv-service serve -v \
