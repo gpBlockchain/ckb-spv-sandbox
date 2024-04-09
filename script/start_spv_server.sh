@@ -15,7 +15,7 @@ KEY_FILE="./script/output.bin"
 
 SPV_OWNER="ckt1qrenum4xaek97sc53rkdqumvan9xxvr43se9e7dnk455t5sysfn7jqsqfsd67w"
 DATA_DIR="./tmp/data5"
-BTC_ENDPOINT="http://localhost:8334"
+BTC_ENDPOINT="http://localhost:80"
 BTC_USERNAME="ckb"
 BTC_PASSWORD="enyVBdd7XOJ_t2RjaR2L13tCPSSNYxbzIS9xtlWycCI"
 BTC_START_HEIGHT=2016
