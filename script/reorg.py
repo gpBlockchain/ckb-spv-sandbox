@@ -68,7 +68,7 @@ class MonitRPCClient:
         return call(self.url, "verify_tx", [proof, btc_id, ckb_client_data])
 
 
-def call(url, method, params, try_count=30):
+def call(url, method, params, try_count=5):
     headers = {'content-type': 'application/json'}
     data = {
         "id": 42,
@@ -176,5 +176,13 @@ def wait_connection_count(node, count, wait_time):
 
 
 if __name__ == '__main__':
+    wait_spv_sync(60 * 5)
+    for i in range(20):
+        print(f"miner and wait spv sync:{i}/{count}")
+        # node1 miner block
+        btcNode1Rpc.generatetoaddress(1, "bcrt1qjw7fr29qcxgd406hh6lhznj3q0lej9y0uugj3h")
+        # wait spv sync
+        wait_spv_sync(3 * 60)
+    print("---reorg-----")
     for i in range(1, 10):
         reorg(i)
