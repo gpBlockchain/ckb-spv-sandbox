@@ -162,3 +162,8 @@ LISTEN_ADDRESS="127.0.0.1:5000"
 
 
 ```
+
+- [reorg](script%2Freorg.py)
+```shell
+python script/reorg.py
+```
