@@ -1,15 +1,15 @@
 name: CI
 on:
- push:
-   branches: [ main, develop, release/* ]
- pull_request:
-   branches: [ main, release/* ]
+  push:
+    branches: [ main, develop, release/* ]
+  pull_request:
+    branches: [ main, release/* ]
 defaults:
- run:
-   shell: bash
+  run:
+    shell: bash
 env:
- CARGO_TERM_COLOR: always
- RUST_TOOLCHAIN: 1.76.0
+  CARGO_TERM_COLOR: always
+  RUST_TOOLCHAIN: 1.76.0
 
 
 jobs:
@@ -29,4 +29,12 @@ jobs:
           bash script/start_node.sh
           bash script/deploy_contract.sh
           bash script/start_spv_server.sh > spv.log 2>&1 &
+          sleep 30
+          cat spv.log
           python script/reorg.py
+      - name: Publish reports
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: jfoa-build-reports-${{ runner.os }}
+          path: spv.log
