@@ -176,6 +176,5 @@ def wait_connection_count(node, count, wait_time):
 
 
 if __name__ == '__main__':
-    for i in range(20):
-        for i in range(1, 10):
-            reorg(i)
+    for i in range(1, 10):
+        reorg(i)

@@ -1,0 +1,32 @@
+name: CI
+# on:
+#   push:
+#     branches: [ main, develop, release/* ]
+#   pull_request:
+#     branches: [ main, release/* ]
+# defaults:
+#   run:
+#     shell: bash
+# env:
+#   CARGO_TERM_COLOR: always
+#   RUST_TOOLCHAIN: 1.76.0
+
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest  # 可以根据您的需求选择不同的操作系统环境
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: |
+          bash script/prepare.sh
+
+     - name: Unit Testing
+       run: |
+         bash script/start_node.sh
+         bash script/deploy_contract.sh
+         bash script/start_spv_server.sh > spv.log 2>&1 &
+         python script/reorg.py
