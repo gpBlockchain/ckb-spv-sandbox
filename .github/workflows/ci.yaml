@@ -18,11 +18,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
       - name: Build
         run: |
-          bash script/prepare.sh
+          bash script/prepare_linux.sh
 
       - name: Unit Testing
         run: |

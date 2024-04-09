@@ -123,7 +123,7 @@ def reorg(count):
         # wait spv sync
         wait_spv_sync(3 * 60)
 
-    print("miner node2 ,recon node1")
+    print("miner node2 ,reorg node1")
     tip1Message = btcNode1Rpc.getchaintips()
     tip2Message = btcNode2Rpc.getchaintips()
     node2_miner_block = tip1Message[0]['height'] - tip2Message[0]['height'] + 1
@@ -136,7 +136,7 @@ def reorg(count):
     wait_connection_count(btcNode1Rpc, 1, 3 * 60)
     # until node1 sync
     wait_nodes_sync(3 * 60)
-    print("wait recon successful")
+    print("wait reorg successful")
     #  until spv sync
     wait_spv_sync(5 * 60)
 
