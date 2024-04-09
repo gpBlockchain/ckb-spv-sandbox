@@ -49,7 +49,7 @@ echo "Transaction Hash: $transaction_hash"
 echo "SPV_CONTRACT_TYPE_HASH=${type_hash}" > .env
 echo "SPV_CONTRACT_OUT_POINT=${transaction_hash}00000000" >> .env
 sleep 20
-echo "deploy ${CKB_BITCOIN_SPV_TYPE_LOCK_PATH}"
+echo "deploy ${CKB_CAN_UPDATE_LOCK_PATH}"
 
 deploy_output=$(./ckb-bitcoin-spv-service/target/debug/ckb-bitcoin-spv-service deploy \
   --ckb-endpoint "${CKB_ENDPOINT}" \
