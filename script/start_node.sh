@@ -20,7 +20,7 @@ fi
 
 # Mine BTC blocks
 echo "Mining BTC blocks..."
-curl_output=$(curl -s -X POST -H "Content-Type: application/json"   -d '{"jsonrpc": "2.0", "method":"generatetoaddress", "params": [2116,"bcrt1qjw7fr29qcxgd406hh6lhznj3q0lej9y0uugj3h"], "id": 1}'  http://ckb:enyVBdd7XOJ_t2RjaR2L13tCPSSNYxbzIS9xtlWycCI@localhost:8334)
+curl_output=$(curl -s -X POST -H "Content-Type: application/json"   -d '{"jsonrpc": "2.0", "method":"generatetoaddress", "params": [2026,"bcrt1qjw7fr29qcxgd406hh6lhznj3q0lej9y0uugj3h"], "id": 1}'  http://ckb:enyVBdd7XOJ_t2RjaR2L13tCPSSNYxbzIS9xtlWycCI@localhost:8334)
 if [[ $curl_output != *"result"* ]]; then
     display_error "Failed to mine BTC blocks"
 fi
