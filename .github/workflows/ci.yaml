@@ -27,6 +27,7 @@ jobs:
       - name: Unit Testing
         run: |
           bash script/start_node.sh
+          sleep 10
           bash script/deploy_contract.sh
           bash script/start_spv_server.sh > spv.log 2>&1 &
           sleep 30

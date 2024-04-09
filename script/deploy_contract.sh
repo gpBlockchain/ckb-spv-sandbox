@@ -1,6 +1,4 @@
 
-echo "deploy can-update-without-ownership-lock"
-
 CKB_ENDPOINT="http://localhost:8114"
 KEY_FILE="./script/output.bin"
 CKB_BITCOIN_SPV_TYPE_LOCK_PATH="./contracts/ckb-bitcoin-spv-type-lock"
@@ -50,7 +48,7 @@ echo "Transaction Hash: $transaction_hash"
 
 echo "SPV_CONTRACT_TYPE_HASH=${type_hash}" > .env
 echo "SPV_CONTRACT_OUT_POINT=${transaction_hash}00000000" >> .env
-sleep 10
+sleep 20
 echo "deploy ${CKB_BITCOIN_SPV_TYPE_LOCK_PATH}"
 
 deploy_output=$(./ckb-bitcoin-spv-service/target/debug/ckb-bitcoin-spv-service deploy \
