@@ -1,0 +1,6 @@
+[submodule "ckb-bitcoin-spv-service"]
+	path = ckb-bitcoin-spv-service
+	url = https://github.com/ckb-cell/ckb-bitcoin-spv-service
+[submodule "ckb-bitcoin-spv-contracts"]
+	path = ckb-bitcoin-spv-contracts
+	url = https://github.com/ckb-cell/ckb-bitcoin-spv-contracts

@@ -22,7 +22,7 @@ jobs:
 
       - name: Build
         run: |
-          bash script/prepare.sh
+          bash script/prepare_linux.sh
 
       - name: Unit Testing
         run: |
